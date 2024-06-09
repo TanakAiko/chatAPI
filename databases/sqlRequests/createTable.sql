@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS chats (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    senderId INTEGER NOT NULL,
+    recieverId INTEGER NOT NULL,
+    content TEXT NOT NULL,
+    createdAt DATETIME NOT NULL
+);

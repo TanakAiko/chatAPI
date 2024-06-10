@@ -1,2 +1,9 @@
-INSERT INTO chats (senderId, recieverId, content, createdAt)
-VALUES (?, ?, ?, ?)
+INSERT INTO chats (
+        senderId,
+        receiverId,
+        content,
+        statusReceived,
+        statusRead,
+        createdAt
+    )
+VALUES (?, ?, ?, ?, ?, ?)

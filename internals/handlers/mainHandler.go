@@ -24,10 +24,14 @@ func MainHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("req.Action : ", req.Action)
 
 	switch req.Action {
-	case "a":
-		fmt.Println("something")
-	case "b":
-		fmt.Println("something")
+	case "createChat":
+		createMessage(w, req.Body, db)
+	case "getChats":
+		getChats(w, db)
+	case "updateStatusReceived":
+		updateStatus("statusReceived", w, req.Body, db)
+	case "updateStatusRead":
+		updateStatus("statusRead", w, req.Body, db)
 	default:
 		http.Error(w, "Unknown action", http.StatusBadRequest)
 		return

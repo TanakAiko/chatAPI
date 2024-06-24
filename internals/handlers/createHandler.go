@@ -13,5 +13,5 @@ func createMessage(w http.ResponseWriter, message md.Message, db *sql.DB) {
 		http.Error(w, "Error while creating chat : "+err.Error(), http.StatusInternalServerError)
 		return
 	}
-	tools.WriteResponse(w, "New chat created", http.StatusCreated)
+	tools.WriteResponse(w, "New chat created", http.StatusOK)
 }
